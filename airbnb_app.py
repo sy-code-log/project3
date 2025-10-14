@@ -128,7 +128,7 @@ with st.sidebar:
     borough_colors = pd.DataFrame({'BoroName': ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island'], 'color_value': [1,2,3,4,5]})
     m = folium.Map(location=[40.7128, -74.0060], zoom_start=10, tiles="cartodbpositron")
     folium.Choropleth(geo_data=geojson_data, data=borough_colors, columns=['BoroName', 'color_value'], key_on='feature.properties.BoroName', fill_color='Set3', fill_opacity=0.5, line_opacity=0.2).add_to(m)
-    map_data = st_folium(m, height=300, width=300)
+    map_data = st_folium(m, height=300, use_container_width=True)
 
     if map_data and map_data['last_clicked']:
         lat, lon = map_data['last_clicked']['lat'], map_data['last_clicked']['lng']
