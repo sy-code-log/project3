@@ -1,0 +1,5 @@
+# Streamlit secrets 파일 무시
+.streamlit/secrets.toml
+
+# .env 파일 무시 (보통 다른 프로젝트에서도 사용)
+.env
